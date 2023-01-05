@@ -1,4 +1,4 @@
-name: npm-start
+name: turbostart-npm
 description: Sets up node, installs npm dependencies, and caches them for later use.
 branding:
   icon: package
