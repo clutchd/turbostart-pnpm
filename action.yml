@@ -13,6 +13,7 @@ runs:
       uses: actions/setup-node@v3.6.0
 
     - name: Clean Install Dependencies
+      shell: bash
       run: npm ci --ignore-scripts
 
     - name: Cache Dependencies
