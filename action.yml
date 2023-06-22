@@ -1,5 +1,5 @@
-name: turbostart-npm
-description: A simple action to setup node, install npm dependencies, and cache for later use.
+name: turbostart-pnpm
+description: A simple action to setup node, install pnpm dependencies, and cache for later use.
 branding:
   icon: package
   color: red
@@ -9,16 +9,15 @@ runs:
     - name: Checkout Repo
       uses: actions/checkout@v3.3.0
 
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2
+
     - name: Setup Node.js
       uses: actions/setup-node@v3.6.0
-
-    - name: Clean Install Dependencies
-      shell: bash
-      run: npm ci --ignore-scripts
-
-    - name: Cache Dependencies
-      uses: actions/cache@v3.2.4
       with:
-        path: ~/.npm
-        key: npm-${{ hashFiles('package-lock.json') }}
-        restore-keys: npm-
+        node-version: ${{ matrix.node-version }}
+        cache: "pnpm"
+
+    - name: Install Dependencies
+      shell: bash
+      run: pnpm i
