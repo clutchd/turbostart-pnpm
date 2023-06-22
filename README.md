@@ -1,3 +1,3 @@
-# turbostart-npm
+# turbostart-pnpm
 
-A simple action to setup node, install npm dependencies, and cache for later use.
+A simple action to setup node, install pnpm dependencies, and cache for later use.
