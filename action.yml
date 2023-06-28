@@ -3,11 +3,11 @@ description: A simple action to setup node, install pnpm dependencies, and cache
 branding:
   icon: package
   color: red
+env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 runs:
   using: composite
-  env:
-    TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-    TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
   steps:
     - name: Checkout Repo
