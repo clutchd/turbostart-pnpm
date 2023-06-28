@@ -3,18 +3,8 @@ description: A simple action to setup node, install pnpm dependencies, and cache
 branding:
   icon: package
   color: red
-inputs:
-  TURBO_TOKEN:
-    description: "Turbo token for authentication"
-    required: true
-  TURBO_TEAM:
-    description: "Turbo team to use"
-    required: true
 runs:
   using: composite
-  env:
-    TURBO_TOKEN: ${{ inputs.TURBO_TOKEN }}
-    TURBO_TEAM: ${{ inputs.TURBO_TEAM }}
   steps:
     - name: Checkout Repo
       uses: actions/checkout@v3.3.0
